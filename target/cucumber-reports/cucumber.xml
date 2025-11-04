@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="3.72" tests="12" skipped="0" failures="0" errors="0" timestamp="2025-11-04T13:23:50.536424200Z">
+<testcase classname="Food API operations" name="Create a new food - #1.1" time="2.055">
+<system-out><![CDATA[
+Given a food with id 5, name "pizza", and price 7.5.........................passed
+When I send a POST request to create the food...............................passed
+Then the response status code should be 201.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Food API operations" name="Create a new food - #1.2" time="0.028">
+<system-out><![CDATA[
+Given a food with id 6, name "pasta", and price 9.0.........................passed
+When I send a POST request to create the food...............................passed
+Then the response status code should be 201.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Food API operations" name="Create a new food - #1.3" time="0.023">
+<system-out><![CDATA[
+Given a food with id 7, name "sushi", and price 2.5.........................passed
+When I send a POST request to create the food...............................passed
+Then the response status code should be 201.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Food API operations" name="Update food price - #1.1" time="0.043">
+<system-out><![CDATA[
+Given a food exists with id 5...............................................passed
+When I update the price of food id 5 to 8.0.................................passed
+Then the response status code should be 200.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Food API operations" name="Update food price - #1.2" time="0.019">
+<system-out><![CDATA[
+Given a food exists with id 6...............................................passed
+When I update the price of food id 6 to 10.0................................passed
+Then the response status code should be 200.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Food API operations" name="Get all foods" time="0.842">
+<system-out><![CDATA[
+When I send a GET request to fetch all foods................................passed
+Then the response status code should be 200.................................passed
+And the response should contain a list of foods.............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Comment API tests" name="Create a new comment - #1.1" time="0.099">
+<system-out><![CDATA[
+Given a comment with userId 1, foodId 5, and body "<Comment>"...............passed
+When I send a POST request to create the comment............................passed
+Then the comment response status code should be 201.........................passed
+And I store the comment id..................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Comment API tests" name="Create a new comment - #1.2" time="0.04">
+<system-out><![CDATA[
+Given a comment with userId 2, foodId 6, and body "<Comment>"...............passed
+When I send a POST request to create the comment............................passed
+Then the comment response status code should be 201.........................passed
+And I store the comment id..................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Comment API tests" name="Delete a comment" time="0.063">
+<system-out><![CDATA[
+Given a comment with userId 1, foodId 5, and body "Very tasty"..............passed
+When I send a POST request to create the comment............................passed
+And I store the comment id..................................................passed
+And I send a DELETE request for this comment................................passed
+Then the comment response status code should be 200.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Comment API tests" name="Get comment by user and food" time="0.057">
+<system-out><![CDATA[
+When I send a GET request to fetch comment by userId 1 and foodId 5.........passed
+Then the comment response status code should be 200.........................passed
+And the response should contain "Very tasty"................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Manage Staffs under Managers" name="Update staff under a manager" time="0.106">
+<system-out><![CDATA[
+Given a STAFF manager with id 1.............................................passed
+When I send a STAFF PUT request to update staff under manager with data.....passed
+Then the STAFF response should contain updated staff data...................passed
+And the STAFF API response status code should be 200........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Manage Staffs under Managers" name="Delete a staff under a manager" time="0.038">
+<system-out><![CDATA[
+Given a STAFF manager with id 1.............................................passed
+When I send a STAFF DELETE request to remove staff with id 2 under manager id 1.passed
+Then the STAFF manager id 1 should have 2 staffs remaining..................passed
+And the STAFF API response status code should be 200........................passed
+]]></system-out>
+</testcase>
+</testsuite>
